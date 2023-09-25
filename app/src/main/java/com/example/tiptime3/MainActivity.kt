@@ -13,17 +13,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+       //setContent {setContentView(R.layout.activity_main)}
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.calculate.setOnClickListener {
-            calculateTip()
-        }
-
+        binding.calculateButton.setOnClickListener { calculateTip() }
     }
-    private fun calculateTip(){
+    private fun calculateTip() {
         val stringInTextField = binding.costOfService.text.toString()
         val cost = stringInTextField.toDoubleOrNull()
+        if (cost == null) {
+            binding.tipResult.text = ""
+            return
+        }
 
 
         val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
@@ -38,5 +41,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
-        binding.tipResult.text = getString(R.string.tip_amount,formattedTip)    }
+        binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
+    }
 }

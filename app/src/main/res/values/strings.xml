@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tip Time2</string>
+    <string name="app_name">Tip Time3</string>
     <string name="cost_of_service">Cost of service</string>
     <string name="service_question">Service question</string>
     <string name="tip_options">Tip options</string>
@@ -8,5 +8,5 @@
     <string name="option_fifteen_percent">Option fifteen percent</string>
     <string name="round_up_switch">Round up switch</string>
     <string name="calculate_button">Calculate button</string>
-    <string name="tip_amount">Tip Amount: %s</string>
+    <string name="tip_amount">Tip Amount: %s</string> />
 </resources>
